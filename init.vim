@@ -11,7 +11,7 @@ Plug 'machakann/vim-sandwich'                           " make sandwiches
 Plug 'mhinz/vim-startify'                               " cool start up screen
 Plug 'ryanoasis/vim-devicons'                           " pretty icons everywhere
 Plug 'psliwka/vim-smoothie'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compat'}  " We recommend updating the parsers on update
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'christoomey/vim-tmux-navigator'
@@ -113,7 +113,7 @@ let g:omni_sql_no_default_maps = 1                      " disable sql omni compl
 let g:loaded_python_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
-let g:python3_host_prog = expand('/usr/local/bin/python3')
+let g:python3_host_prog = expand('/home/hefb/miniconda3/bin/python')
 
 
 "" coc
