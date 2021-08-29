@@ -15,7 +15,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': '0.5-compa
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'famiu/bufdelete.nvim'
+Plug 'qpkorr/vim-bufkill'
 
 " themes
 Plug 'sainnhe/gruvbox-material'
@@ -235,7 +235,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup noargs
 "     " startify when there is no open buffer left
     " autocmd BufDelete * if empty(filter(tabpagebuflist(), '!buflisted(v:val)')) | Startify | endif
-    autocmd BufEnter * if line2byte('.') == -1 && len(tabpagebuflist()) == 1 | Startify | endif
+    autocmd BufEnter * if line2byte('.') == -1 && len(tabpagebuflist()) == 1 && empty(bufname()) | Startify | endif
 
 
 "     " open startify on start if no argument was passed
@@ -306,6 +306,17 @@ function! s:show_documentation()
   endif
 endfunction
 
+function! SmartBufKill()
+  let active_buffer_count=len(getbufinfo({'buflisted':1}))
+  if expand('%:p') != '' && active_buffer_count > 1
+    echo ':BD'
+    BD
+  else
+    echo ':bd'
+    bd
+  endif
+endfunction
+
 "}}}
 
 " ======================== Custom Mappings ====================== "{{{
@@ -316,7 +327,7 @@ nnoremap ; :
 nmap \ <leader>q
 map <F6> :Startify <CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
-nmap <leader>q :Bdelete<CR>
+nmap <silent> <leader>q :call SmartBufKill()<CR>
 nmap <leader>w :w<CR>
 map <leader>s :Format<CR>
 nmap <Tab> :bnext<CR>
