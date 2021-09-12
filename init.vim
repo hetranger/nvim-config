@@ -16,6 +16,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'qpkorr/vim-bufkill'
+Plug 'wellle/tmux-complete.vim'
 
 " themes
 Plug 'sainnhe/gruvbox-material'
