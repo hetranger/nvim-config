@@ -20,6 +20,7 @@ Plug 'wellle/tmux-complete.vim'
 
 " themes
 Plug 'sainnhe/gruvbox-material'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -69,22 +70,25 @@ set nobackup
 set nowritebackup
 set cmdheight=1
 
-" Themeing
-
-" gruvbox_material config
+" themeing
 set background=dark
-" Set contrast.
-" This configuration option should be placed before `colorscheme gruvbox-material`.
-" Available values: 'hard', 'medium'(default), 'soft'
-let g:gruvbox_material_background = 'soft'
-let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_transparent_background = 1
-let g:gruvbox_material_diagnostic_virtual_text = 'colored'
+""" gruvbox_material config
+" set contrast.
+" this configuration option should be placed before `colorscheme gruvbox-material`.
+" available values: 'hard', 'medium'(default), 'soft'
+" let g:gruvbox_material_background = 'soft'
+" let g:gruvbox_material_better_performance = 1
+" let g:gruvbox_material_transparent_background = 1
+" let g:gruvbox_material_diagnostic_virtual_text = 'colored'
 
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
+
+""" onedark colorscheme
+colorscheme onedark
 
 " lualine
-:lua require('lualine').setup{options={theme='gruvbox_my'}}
+" :lua require('lualine').setup{options={theme='gruvbox_my'}}
+:lua require('lualine').setup{options={theme='onedark'}}
 
 " let g:material_style = 'oceanic'
 " hi Pmenu guibg='#00010a' guifg=white                    " popup menu colors
