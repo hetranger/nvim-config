@@ -56,10 +56,10 @@
   "diagnostic.warningSign": "⚠",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "ஐ",
-  "diagnostic.checkCurrentLine": true,
+  "diagnostic.checkCurrentLine": false,
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
-  "diagnostic.virtualText": true,
-  "diagnostic.enableMessage": "never",
+  "diagnostic.virtualText": false,
+  "diagnostic.enableMessage": "always",
 
   // list settings
   "list.source.grep.command": "rg",
@@ -74,5 +74,5 @@
   // other language specific settings
   "html.autoClosingTags": true,
   "prettier.proseWrap": "always",
-  "git.enableGutters": false,
+  "git.enableGutters": true,
 }

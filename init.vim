@@ -50,7 +50,8 @@ set history=1000                                        " history limit
 set backspace=indent,eol,start                          " sensible backspacing
 set undofile                                            " enable persistent undo
 set undodir=/tmp                                        " undo temp file directory
-set foldlevel=0                                         " open all folds by default
+set foldmethod=indent                                   " set foldmethod
+set foldlevel=99                                        " open all folds by default
 set inccommand=nosplit                                  " visual feedback while substituting
 set showtabline=1                                       " always show tabline
 set grepprg=rg\ --vimgrep                               " use rg as default grepper
@@ -356,6 +357,9 @@ vnoremap <LeftRelease> "+y<LeftRelease>
 vnoremap <C-c> "+y<CR>
 vnoremap <C-x> "+d<CR>
 
+" " fold shortcuts
+vnoremap <space> zf
+nnoremap <space> za
 
 " switch between splits using ctrl + {h,j,k,l}
 inoremap <C-h> <C-\><C-N><C-w>h
